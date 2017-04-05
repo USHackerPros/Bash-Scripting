@@ -1,0 +1,58 @@
+WORK ON COMMAND LINE
+BASH
+SHELL ENVIRONMENT
+PATH
+ENVIRONMENTAL VARIABLE
+HISTORY
+COMPLETION
+COMMANDS
+			Bash
+
+It is the bourne again shell
+
+			SHELL ENVIRONMENT
+
+/bin/bash
+/etc/passwd
+/etc/profile
+/etc/bashrc
+		
+			PATH
+
+PATH--->only run executable fine
+.--->current directory
+..--->parent directory
+
+			SET ENVIRONMENTAL VARIABLE
+
+env--->Command to see environmental varible
+(eg)
+ABC=123
+export ABC
+unset ABC
+Adding path PATH=$PATH:.--->set the environmental variable to $PATH and then (:.) for current directory
+export PATH
+
+
+     			TAB COMPLETION AND HISTORY
+
+
+history--->Remember the system history
+tab button to complete command
+uname -a---->info about system
+man history
+man -k filename--->man pages for commands which uses http will be displayed 
+apropos--->
+			
+			commands
+bash 
+exec ls--->run the command it will exit the shell  
+ls 
+pwd
+env
+set
+export
+unset--->unset environmental variable
+echo
+man
+

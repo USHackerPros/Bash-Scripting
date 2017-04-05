@@ -1,0 +1,49 @@
+			
+   			USE STREAMS PIPES AND REDIRECTS(4)(4)		
+STDIN
+STDOUT
+STDERR
+PIPES
+TEE
+XARGS
+
+			STDIN
+
+stuf of program chews up
+wc < filename
+	 
+	STDOUT
+
+stuff of program spits out
+ls 1> ls.txt---> 1 signifies standard output or redirects the standard output
+
+ls >> filename---> adding append at the end
+
+	STDERR 
+
+when a program complains e
+ls bob >> file.txt--->
+ls bob 2> filename--->Redirect std err
+ls 2> ls.txt---> 2 signifies standard err
+ls bob >> result.txt 2>> errors.txt---> In this case "bob" will append goes to the standard error that is "ERRORS.TXT"
+ls >> result.txt 2>> errors.txt---> In this Case "ls" is redirecting to standard output that is "RESULTS.TXT" 
+ls bob > output.txt 2>&1---> Standerd error redirected into the same place
+		but in
+ls bob > output.txt---> nothing will be present in the output.txt
+		
+		PIPES
+
+The standard output of a PARTICULAR COMMAND is used as a standard input of the another command
+
+ls -l | grep filename or
+	
+		TEE
+
+Give the result
+ls | tee output.txt---> Put the output into a file and displays on the screen
+
+
+		XARGS
+
+List of files in an argument manner
+ls | xargs echo--->list the file into arguments

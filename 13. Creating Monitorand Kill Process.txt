@@ -1,0 +1,37 @@
+		Create Monitor And Kill Processes
+
+
+BACKGROUND AND FOREGROUND
+PRESISTENT PROCESS
+INTERACT WITH PROCESS
+SORT RUNNING PROCESS
+		
+		BACKGROUND AND FOREGROUND
+
+sleep (& is for background)
+sleep 2000 &--->run a process bg
+fg--->bring process fg
+CTRL+Z--->Suspend the process
+bg--->put process bg
+jobs--->view job status
+killall filename --->kill all
+kill -9,-15 PID
+ps -aux--->view all process
+
+		NOHUP
+
+Did not stop the process when user Logout also
+nohup--->run it in a a way that it wont intercept the hangup signal process,,,when the user logout also it will run the process
+nohup sleep 1000 &
+		Persistent Process
+Interact with process
+
+			SORT RUNNING PROCESS
+
+Refreshing list of process
+top---> view process in real time 
+>--->Sorted by memory
+<--->sorted by cpu
+uptime----> load average view timings how many users are login
+free--->view memory info and swap
+swap--->use harddrive as ram chip when ram is full for safty is called swap

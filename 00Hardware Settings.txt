@@ -1,0 +1,49 @@
+HAL--->Hardware abstraction layer eth0
+dbus--->Communication with hardware and software
+udev---> /dev/sda
+	 /dev/camera
+sysfs--->(/sys)HAL keep databases of devices which is connected to system
+
+
+SYNOPSIS
+       int sysfs(int option, const char *fsname);
+
+       int sysfs(int option, unsigned int fs_index, char *buf);
+
+       int sysfs(int option);
+
+DESCRIPTION
+       sysfs()  returns  information  about  the  filesystem  types  currently
+       present in the kernel.  The specific form of the sysfs() call  and  the
+       information returned depends on the option in effect:
+
+       1  Translate  the filesystem identifier string fsname into a filesystem
+          type index.
+
+       2  Translate the filesystem type index fs_index into a  null-terminated
+          filesystem  identifier  string.   This string will be written to the
+
+
+
+
+Proc filesystem--->All Running commands(/proc)Created in RAM when the computer boots
+		    Read and write information (but all are temporary)
+		    Must be root
+cat cpuinfo
+cd /proc/sys/net/ipv4#cat ip_forward---> network forward information are found in (/etc/sysctl.conf)
+DEV DIRECTORY
+cd /dev
+lsmod--->Kernal modules
+lspci--->PCI devices connected
+lsusb--->USB devices connected
+lshw---->Hardware Devices details
+lspcmcia--->
+lshal--->
+
+Kernel Modules
+modprobe--->insert modules
+rmmode--->remove module in system
+Device ID--->UUID(Universially Unique ID)
+
+
+

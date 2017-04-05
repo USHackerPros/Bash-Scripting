@@ -1,0 +1,86 @@
+				RUNLEVELS and REBOOTING(3)
+
+RUNLEVELS
+INITTAB
+INIT.D
+INIT/TELINIT
+REBOOT
+SHUTDOWN
+UPSTART
+
+			RUNLEVELS
+Modes Linux Computer Runs Some are standardize
+
+ID 	Name 				Description
+0 	Halt 				Shuts down the system.
+1 	Single-user Mode 		Mode for administrative tasks.[2][2]
+2 	Multi-user Mode 		Does not configure network interfaces and does not export networks services.[3]
+3 	Multi-user Mode with Networking Starts the system normally.[4]
+4 	Not used/User-definable 	For special purposes.
+5 	Start the system normally 	Same as runlevel 3 + display manager.
+	with appropriate display manager. ( with GUI ) 	
+6 	Reboot 				Reboots the system.
+
+1-5 or customize 3 or 5 Redhat and SUSE
+0--->Hault or Stop level Standard across all LINUX distro 
+1--->Single User Mode(Recovery mode standard across all distro) Usually do not need any passwd to login as root when the system is completly mess up   
+[2]--->Ubuntu/Debian-default 
+3--->Redhat/suse-text mode(Command Mode)NON GUI
+(4)--->Wildcard Make our own environment(not used by default) Customize we can use our own run level
+5--->Redhat/SuSE-GUI mode(XWindows)
+6--->Reboot
+0,1,6--->Predefined for halt Single,UserMod and reboot
+For Changes in system edit nano /etc/inittab
+
+			SHUTDOWN
+
+IN runlevels 3 multiuser mode without NFS and it gives bunch of stuff 
+        Trap Ctrl+Alt+Del--->for shoutdown
+                ca::ctrlaltdel:/sbin/shutdown -t3 -r now
+        When ups is fail schedule a shutdown for 2 min
+        	pf::powerfail:/sbin/shutdown -f -h +Z "Power Failure: System Shutting Down"
+        Power Restored before Shutdown
+        	pr::powerrokwait:/sbin/shutdown -c "Power Restored: Shutdown Cancalled"
+
+		CD /ETC/INITTAB
+
+Tells init what to do
+set default runlevel
+All commands in server process lives
+cd /etc/init.d--->Inside init.d command line scripts used for different applications are present 
+used to Sstart and Kstop things ./filename stop or ./filename start
+
+
+			 /ETC/RC.D 
+
+rc.d--->is used for referencing startup scripts
+Different commands which run at different runlevel
+	cat /etc/rc0.d
+	cat /etc/rc1.d
+	cat /etc/rc2.d
+	cat /etc/rc3.d--->The scripts are all symbolic links whose targets are located in
+/etc/init.d
+
+			INIT.D
+
+cd /etc/init.d
+cd /etc/init.d/nfs S88nfs--->symbolioc link
+
+				UPSTART
+Upstart is an event-based replacement for the traditional init daemon 
+Start and Stop a process in init file
+cd /etc/init--->conf files
+	normally we do --->services squid stop
+		status squid 
+		start squid
+To Check which deamon process ara running
+		initctl list | less
+
+
+
+	Upstart is an event-based replacement for the traditional init daemon — the method by which several Unix-like computer operating systems perform tasks when the computer is started
+
+
+	 Upstart is an event-based replacement for the /sbin/init daemon which handles starting of tasks and services during boot, stopping them during shutdown and supervising them while the system is running.
+
+	It was originally develIE

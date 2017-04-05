@@ -1,0 +1,43 @@
+			PROCESS PRIORITIES(2)
+
+NICENESS EXPLAINED
+PS
+PSTREE
+TOP 
+NICE
+RENICE
+
+		NICENESS EXPLAINED
+
+other process to give time and run in a smooth manner
+it will we a range of 19  -20 to 19----> -20 value has higher priority and vice versa
+
+			PS
+
+ps -alx--->long view of running process, Shows the nice level user ID
+ps -aux--->all processes including demon process CpU Usage 
+ps -eo user,pid,pcpu,nice,comm--->process based on certain fields
+	where
+		"e" for everything " o "  for output
+
+		ps -eo user,nice,comm | grep sleep
+
+pstree--->display all the process in a parent child manner
+
+		TOP
+
+top---> view process in real time 
+>--->Sorted by memory
+<--->sorted by cpu
+
+		NICE
+
+run a program with modified scheduling priority
+nice -n -20 sleep 500--->set higher nice level
+
+		RENICE
+
+renice 15-p PID
+renice 19 -u username 
+renice -n 15 -p PID
+renice 19 -u username

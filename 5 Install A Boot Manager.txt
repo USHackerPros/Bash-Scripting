@@ -1,0 +1,53 @@
+			INSTALL A BOOTLOADER(2)
+LILO
+GRUB
+BACKUP MASTER BOOT RECORD
+
+				LILO
+
+Configuration file of LILO is in --->cat /etc/lilo.conf
+lilo consist of
+			boot--->What device going to boot from
+			map--->lilo create a mape file
+			install---->It is the default engine /ead /boot/boot
+			prompt--->wheathet or not aprompt is used
+			timeout--->Time out and boot the default in required time
+			message--->what ever text in /boot/message
+			lba64--->it talks about drive
+			default--->What default labels it boot from
+
+			image=/boot/vmliniz-2.6.28-11-generic--->kernel in which the system boots
+			label--->linux
+			initrd=boot/initrd.img-3.5.0-44-generic--->initial ram disk			          Kernel loads the programs itself going (initial ram disk). 
+			  For booting purpose kernel uses it
+			read-only
+			root=/dev/sba1
+			others=/dev/sda5
+				label=dos
+
+				GRUB GRand Unified Bootloader
+
+It is also a boot loader
+hiddenmenu--->does not show menu by default
+default 0--->which root boots to
+timeout 3---->how many seconds to be waited for booting
+title--->Consist of version of OS and the kernel version
+kernel--->
+initrd
+Boot multitude operating system
+Configuration files stored in /boot/grub/menu.lst or /etc/grub.conf
+grub-install /dev/sda--->install grub loader
+bootrc.exe\FixMBR to remove grub from windows boot loader
+
+				BACKUP MBR
+
+dd-->Write it sector to sector what MBR wants
+dd  if=/dev/sda of=/root/backup.mbr bs=512 count=1
+reverse
+dd  if=/root/backup.mbr of=/dev/sda bs=512 count=1
+where 
+	if=input file
+	of=output file 
+	bs=block size
+	count=1 important, otherwise it will take the entire disk
+

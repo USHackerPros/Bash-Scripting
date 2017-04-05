@@ -1,0 +1,33 @@
+
+			VI EDITOR(3)
+
+vi has 2 basic modes 
+	command mode---><<Esc key
+	insert mode--->I key
+	Append mode--->A Key
+	newline mode--->O Key
+
+h,j,k,l--->left,down,up,right
+c--->change letter or word
+d--->cut or delete letter or word
+y--->yank letter or word
+yy---> copy line
+dd--->cut line
+dw--->cut single word
+p--->put or paste contents of register
+dl--->cut single letter
+/name of word --->search word or file
+dd
+n--->forward search
+N--->Backward Search
+?name of word--->same as /
+but n will differ
+n--->backward 
+N--->forward
+:e!--->return to normal
+:q!--->quit without saving
+:w!--->write even if it is a read-only file
+ZZ or :wq!--->save and quit
+
+Change a word--->press esc and then press w
+

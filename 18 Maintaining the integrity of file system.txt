@@ -1,0 +1,45 @@
+			Maintain the integrity of file system(2)
+CHECK THE INTEGRITY
+MONITOR FREE SPACE/INODES
+REPAIR SIMPLE PROBLEMS
+
+		MONITOR FREE SPACE/INODES
+
+df--->disk free
+df -h--->human readable format
+df -i--->every file in the computer has an inode(like a bookmark)
+du -h--->disk usage of individual folders not files
+du -h /home/*--->find folder recrussively ie all in system
+du -h --summarize /home/*--->summarize the all users currently using system
+du -h summarize /home/faith/*--->summerize the folders
+
+		CHECK THE INTEGRITY
+
+fsck /dev/sdb1--->Check file System of the disk
+unmount /dev/sdb1--->unmounting filesystem
+fsck -t ext3 /dev/sdb1 or fsck.ext3 /dev/sbd1---> Check all inodes, dir and subdir structure of fs 
+sudo fsck /dev/sdc1--->
+sudo xfs_check /dev/sdb1--->check xfs file system
+sudo xfs_repair /dev/sdb1--->repair xfs file system
+sudo mkfs -t ext2 /dev/sdc1--->
+fsck.ext2 /dev/sdbc1 or e2fsck--->
+sudo mkfs.risrefs /dev/sdc1--->make riserfs file system,
+sudo fsck.riserfs /dev/sdc1--->
+sudo fsck.vfat /dev/sdc1--->
+
+		REPAIR SIMPLE FILE SYSTEM
+
+sudo xfs_check /dev/sdb1--->  
+sudo xfs_repair /dev/sdb1--->
+sudo debugfs -w /dev/sdc1--->Kind of scary thing
+debugfs:help
+debugfs:ls
+dedugfs:rm filename.txt
+debugfs:lsdel
+debugfs:undel <inode number> <dest.name>
+
+sudo dumpe2fs /dev/sdc1--->for ext2 ext3
+sudo tune2fs /dev/sdc1--->Change ext2 t0 ext3 easilly
+sudo xfs_info /dev/sdc1
+sudi xfs_metadump /dev/sdb1
+

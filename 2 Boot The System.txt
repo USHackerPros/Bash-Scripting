@@ -1,0 +1,71 @@
+					BOOT THE SYSTEM(3)
+CONTENTS
+
+BIOS
+BOOTLOADER
+KERNEL
+DMESG
+/VAR/LOG/DMESG
+INIT
+
+			BIOS--->Specifes how to boot
+
+F2 for boot option
+Basic input and output systems
+Specifies how the system boots
+
+			BOOTLOADERS--->Specifies what to boot
+
+LILO-->LInux LOader 
+GRUB--->GRand Unified Bootloader in Ubuntu
+	Press Esc for menu while booting
+	3 diff options 
+		1.Generic Kernel
+		2.Recovery mode
+		3.MemTest--->Test memory
+Highlight (1.) default line and press (e) to edit		
+4 options	
+	1.UUID sometimes hd(0,0)--->Tells which hard drive to boot from the device 
+	2.Kernel /boot/vmlinuz-3.5.0-44-generic root=uuid 
+	where
+		/boot/vmlinuz-3.5.0-44-generic--->kernel to boot from
+		root==uuid--->Telling the kernel where boot is located
+	3.initrd /boot/initrd.img-3.5.0-44-generic
+		initrd--->Kernel loads the programs itself going (initial ram disk). 
+			For booting purpose kernel uses it
+	4.quiet--->Hide lot of kernel messages
+highlight 2 and press e for grub edit
+	splash--->graphical looking boot things
+Removing quite and splash all debugging stuff
+press (d) for delete
+press (e) for edit
+press (b) for boot			
+
+				KERNEL
+
+Kernel is the heart of the OS which has control over all the hardware or resources and memories
+			
+				DMESG--->Changes In memory real time
+	
+	dmesg-->current changes takes place in the memory 
+
+				/VAR/LOG/DMESG
+
+	/var/log/dmesg-->file itself just from the computer boot up after that it stops
+
+	/var/log/messages--->log of all informations and from other computers also
+
+			INIT--->Parent of all process	
+
+init is the parent of all process
+pstree--->shows hierarch of all commands
+huge servers running in init, it is the key process
+RHEL CentOS running on init
+		
+cd /boot--->Describing what kernel to boot
+cd boot/grub--->grub files
+vmlinuz-3.2.0-29-generic-pae--->kernel file
+
+initrd.img-3.2.0-29-generic-pae--->initrd file on /boot
+cd /boot/grub--->boot loader
+

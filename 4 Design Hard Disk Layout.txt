@@ -1,0 +1,52 @@
+				HARD DISK LAYOUT(2)
+
+PARTITION DESKTOP--->ONE HARD DRIVE IN SEVERAL PARTITION
+FILE SYSTEM--->LOCAL FS OR REMOTE FILE SYSTEM   
+THIS IS NOW A BASIC SYSTEM FILE DOWNLOAD--->LOCAL FS OR REMOTE FILE SYSTEM   
+MOUNT POINT--->MOUNT FILESYSTEM  ON FOLDERS
+SWAP SPACE--->VIRTUAL MEMORY ON LOCAL HARDDRIVE
+DESIGN CONSIDERATION--->DIFF NEEDS			
+
+				BASIC DESKTOP
+
+Few Partitions are present in basic desktop
+/---> 	Absolute root of all and biggest of all
+	Start of entire file system format
+
+#/boot--->100 MB is good for boot, 
+	  It is the first partition and how many kernel versions are going to keep
+
+/swap--->virtual memory gb of memory like actual ram --->
+	 1-2 times the ram 4 gb means 8gb of swap partition it is a paging file in windows
+
+			NETWORK WORKSTATION
+
+Local Hard Drive is present in it and then  
+/--->Root of all
+
+/boot/--->Mount for first partition
+
+/home/--->NFS,SMB(Samba) SSH mostly NFS is used
+	/home/noname
+	/home/nameno
+	NFS is the most common way to mount the home directory from the central file server
+
+/swap--->1-2 times the RAM
+	 It is a partition but not mounted on the file system
+
+
+			SERVER SETUP
+
+Server has seperate partition for each directory
+/
+/home/
+/var/ own partition--->for web server, very volatile
+			
+/usr/bin/apache--->mounted in network sometimes in read only when bunch of servers doing the same thing
+
+/opt--->third party applications
+
+/usr--->unix system mounted in network sometimes
+
+
+

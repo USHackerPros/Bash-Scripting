@@ -1,0 +1,68 @@
+				Mounting and Unmounting File System
+MANUAL MOUNTING/UNMOUNTING
+MOUNTING ON BOOTUP(/ETC/FSTAB)
+USER MOUNTABLE FILESYSTEMS
+--AUTOMOUNT
+
+		Manual mounting and unmounting
+
+ls -l /dev/sdb1--->view device
+ls -l /mnt--->view mounted device
+mount--->to view which devices are mounted
+mount -t ext3 /dev/sdb1 /mnt/pendrive--->mount a pendrive
+umount  /dev/sdb1
+
+ 		Mounting on bootup(/etc/fstab)
+
+nano /etc/fstab
+fstab has 6 fields
+1 field--->what filesystem want to mount
+2 field--->where mount point
+3 field--->type of file system
+4 field--->option
+5 field--->dump is a boolean thing 1 means save file automatically 0 means it won't 
+6 field--->pass order in which file systems are scanned root file system has scan 1 local file system has scan no. 2 removable devices has scan is 0
+/media--->Place where floppy,cdrom are mounted or genrally removable media is mounted
+
+/dev/sbd1 /mnt/pendrive vfat or(auto) default or rw,user,auto(auto mount the filesystem),noexec(nobody can be able use executable files)
+		
+		User mountable file systems
+
+/dev/sdb1 /mnt/pendrive ext3 rw,user(anybody can do it),auto,noexec  0 2
+			
+			automount
+ 
+mount /mnt/pendrive
+mount /mnt/pendrive
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				Manualling mounting/unmounting
+ls -l /dev/sdb[or]c
+ls -l mnt
+mount -t ext3 or vfat /dev/sdb /mnt/
+umount /dev/sdc1--->unmount 
+
+				Mounting on bootup(/etc/fstab)
+edit nano /etc/fstab
+/dev/sbd1 /mnt/filename ext3 or vfat rw,user(all can able to view),auto,noexec otherwise default 0 0
+
+User Mountable file system
+				Automount
+
+
+
+

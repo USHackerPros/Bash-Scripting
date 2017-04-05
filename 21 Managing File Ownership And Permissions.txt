@@ -1,0 +1,58 @@
+				MANAGING FILE OWNERSHIP AND PREMISSIONS
+	OWNERSHIP
+		CHOWN/CHGRP
+	PERMISSINOS
+		FILES AND FOLDERS
+		CHMOD
+		OCTAL
+		UMASK
+	SPECIAL PERMISSIONS
+		SUID GUID STICK BIT
+			
+				OWNERSHIP
+
+chown root filename--->to change owner of a folder or file
+chgrp root filename--->to change group 
+chown -R username filename--->change owner Recrussively
+chown root:noname filename--->both owner and group in one command
+				
+				PERMISSIONS
+d--->directory
+l--->symbolic link
+c--->Character
+file and folders
+chmod 777 filename---->Permission for all(UGO)
+umask--->bits used for permission 
+default umask is 0002 or 0022
+777-022=755
+grep umask /etc/profile 
+System wide change for umask edit .profile file
+umask 0077--->change umask
+
+ 				SPECIAL PERMISSION
+
+to make changes system wide edit nano .profile			
+				
+				SUID--->SetUserID--->4
+Mostly for Programs used by Superuser the exec file run as owner of the file without having root access and is used for files
+chmod u+s file name--->set
+chmod u-s filename--->remove	
+				GUID--->GroupuserID--->2
+
+on executable it runs on whatever group own the file or folder
+on folders
+chmod g+s filename--->set
+chmod g-s filename--->remove
+				Stick bit--->1
+used on folders not on files
+previously used for files also
+on folder--->user can delete only the files they owned
+used in tmp directory
+chmod o+t folder
+
+In octal mode
+chmod 2666 file--->set group id
+chmod 2733 file
+chomd 4733 file or folder--->set user id
+chomd 1733 folder--->sticky bits
+chmod 0755 file-or folder--->remove all cases

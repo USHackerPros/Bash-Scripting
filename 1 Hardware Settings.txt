@@ -1,0 +1,126 @@
+        					HARDEARE SETTINGS(2)
+
+CONTENT
+
+DETERMINE SETTINGS
+HAL,dbus,udev
+/sys, /proc/dev
+lsmod, lsusb,lspci
+CONFIGURE SETTINGS
+Set Device ID
+Kernel Module
+Adding/Removing Device
+
+						DETERMINE SETTINGS
+
+					HAL--->HARDWARE ABSTRACTION LAYER
+
+Imagine that a Server with 3 different Network Cards in it One is an intel card other free cam card 3rd is a diff type of card,some other OS like FREE BSD depending on the brand we have different device names how you refered them in our configuration. 
+The HAL in Linux does when we pluged in an ethernet card in (Linux) knows it is an ethernet card it mention it as (eth0),
+No matter wat type of card it is 
+Abstracts out the idea what brand it is.
+Great way to replace the material easier
+eth0 abstract out the hardware which type it is. 
+Abstracts out of the idea what brand the devices is, 
+
+		    			DBUS--->Actual Bus(Communication between Haraware and Software)
+
+Like Actual bus Kernel or HAL communicate with the Desktop
+It is an actual bus.
+dbus tells the Dsk by app and HAL
+Manager or other removable or hardware(Communication with H/W and S/W)
+Event signalling that a dbus signal has been emitted
+
+					UDEV--->/dev/sda,/dev/sdb,/dev/sdc[Linux dynamic device management] 
+
+All device information udev process is stored in the dev database.
+Communicate by HAL wen a block devices is plugged in udev will find the device
+/dev/sdb1 can be linked to /dev/camera
+The udev daemon, udevd(8), receives device uevents directly from the kernel whenever a device is added or removed from the system, or it changes its state.
+
+					SYSFS or /sys--->HAL keeps database all about the devices connected to hard drive
+
+
+Generate and get filesystem type information cd /sys/bus HAL  is in sys directory 
+       sysfs - get filesystem type information
+HAL keep databases of devices which is connected to system
+cd /sys/bus/usb/devices
+cd /sys/bus/pci/devices
+
+					PROC--->/proc---> Kernel keeps All the running commands
+
+Its not a real filesystem itz not written to a hard disk
+Dynamically Created in RAM when computer boots
+All Source of different configurations are stored
+Read and write information about the running krenel but only temperory
+tf we make changes to proc file system in next reboot the changes will be gone
+Must be root to make changes
+It is a virtual filesystem
+cd /proc--->mostly has process ID
+	1--->is init process or first process
+		cat cpuinfo--->Contain CPU information
+		cat mounts ---->Currently mounted devices
+cd /proc/sys/fs/---->All mounted file systems in computes
+	cat file-max--->Maximum files opens at one time
+		While running Oracle Database 500000 files can be very quick
+		Changed by ( echo 1000000 > file-max ) 	
+	and mounted devices and fs
+cd /proc/sys/net/ipv4--->forward ip packets
+	cat ip_forward--->view ip is forwarded or not
+		to forward ip packets [echo 1 >ip_forward]	
+		INFO of /proc stored in /etc/sysctl.conf
+		
+		cat /proc/cpuinfo
+
+					DEV/dev--->device files UDEV
+
+Created by UDEV
+talks about hard drive and other devices which is connected
+cd /dev
+cdrom--->which type of cdrom it is udev will say
+udev rules
+		
+					LSMOD
+
+lsmod--->Shows kernal module currently running in system
+
+					LSUSB
+
+lsusb---->Current USB devices connected
+		
+					LSPCI
+
+lspci--->Current PCI devices pluged into computer
+lspcmcia
+lshal
+lshw
+			
+					KERNEL MODULE
+	
+(lsmod vmxnet) for network module
+rmmod modulename--->remove kernal module
+insmod modulename--->insert module into running kernel for packages
+modprobe--->it is also insert module probes for any other dependencies and insert the module
+nano /etc/modules/--->edit module to make permanent changes
+or
+cd /etc/modprobe.d
+
+					CONFIGURATION SETTINGS
+					
+			UUID(Universal Unique IDentifier)---->Used to mount hard drive or devices in a specific place
+		
+Used to mount hard drive or devices in a specific place for example one in /home other in /root, /var
+Mount specific folder based on UUID
+Instead of specifing specific device /dev/sdb1
+Set Device ID	
+UUID--->device ID UUID(Universially Unique ID)
+Mount a hard drive or flash drive based on its exact unique identifier
+
+
+
+					ADDING AND REMOVING DEVICES
+
+Happens in dev directory
+
+Hard Plug--->Plug an usb device when system is running 
+Cold plug--->Turnoff the system and then use the Video Card or others

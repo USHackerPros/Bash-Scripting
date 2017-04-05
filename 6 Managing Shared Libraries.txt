@@ -1,0 +1,25 @@
+			MANAGING SHARED LIBRARIES(1)
+
+WHAT ARE SHARED LIBRARIES
+DETERMINING ASS0CIATED LIBS
+CONFIGURING SYSTEM
+LDD, LDCONFIG
+LD.SO.CACHE, LD.SO.CONF.D
+
+			WHAT ARE SHARED LIBRARIES
+
+Files that different binaries used
+Different binary files links with the same library file it saves disk spaces becoz the library files does not have compiled into binary
+Next is memory usage if there is a shared library loaded into memory ie two different program using the same library and loaded into memory second program is automatically loaded into memory
+ldd command is used to see the shared libraries
+
+				LDD,LD.SO.CONF.D
+
+ldd--->(ldd /bin/ls) What library files where ls depends on--->help what the binary needs
+ld.so.cache is in /etc--->Cache of all the library files currently installed on system
+ld.so.conf---> Every configuration file in the ld.so.conf.d folder is included
+ld.so.conf.d--->Four different conf files are present ld.so.conf.d all library conf files are stored  
+ld.so.cache--->ls- l  read the cache file and update it all files are included in cache
+
+ldconfig--->figure your system,
+

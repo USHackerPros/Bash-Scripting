@@ -1,0 +1,174 @@
+			Processing text stream using filters
+
+
+			Textutils
+CAT
+CUT
+EXPAND
+FMT
+HEAD
+OD
+JOIN
+NL
+PASTE
+PR
+SED
+SORT
+SPLIT
+TAIL
+TR
+UNEXPAND
+UNIQ
+WE
+			CAT
+
+cat--->concatenation files and print on standard output 
+	eg
+		cat filename > filename1
+			
+			CUT
+
+cut--->remove section from each line of the input and select the info. such as al typeman cut
+
+		example
+			cut -c 2,3,4,5,6 filename gives character from each line
+	where c--->character
+
+			EXPAND
+
+expand--->convert tab into spaces
+	eg
+		expand filename
+
+			FORMAT
+
+fmt--->Reformat each paragraph in a file
+	example
+		fmt filename--->put all the character in a single line
+		fmt -w 5 filename--->Only width of five character in a single line
+
+			HEAD
+
+head--->Print the first ten lines of each FILE to o/p by default
+	example
+		head /var/log/syslog---> only first 10 lines
+		head -n 2 filename--->Print only 2 lines of a file
+
+			OD
+
+od--->write an unambiguous representation , octal byte default, FILE to o/p
+	eg
+		od filename--->octal representation of the file present inside a filename
+		od -c filename--->octal character representation of the file present inside a filename
+
+			JOIN
+
+join--->Merge two FILE based on a common field
+	eg
+		join filename1 filename2
+
+			NL
+
+nl--->write each FILE to std o/p,write line number added
+	eg
+		nl filename > filename1
+
+			PASTE
+
+paste--->merge line of files Writes lines of the sequentelly corrosponding lines from each FILE, seperated by TABS, to std o/p
+	eg	
+		paste file1 file2
+
+			PR
+
+pr--->Convert text files for printing
+	eg
+		pr filename
+
+			SED
+
+sed--->Stream editor for filtering and transforming text, Sed  is a stream editor.  A stream editor is used to perform basic text transformations on an input stream (a file or input from  a  pipeline). While  in  some  ways similar to an editor which permits scripted edits (such as ed), sed works by making only one pass over the input(s),  and is consequently more efficient.  But it is sed's ability to filter text in a pipeline which particularly distinguishes it from other  types  of editors.
+
+	-n, --quiet, --silent
+
+              suppress automatic printing of pattern space
+
+       -e script, --expression=script
+
+              add the script to the commands to be executed
+
+       -f script-file, --file=script-file
+
+              add the contents of script-file to the commands to be executed
+
+       --follow-symlinks
+
+              follow symlinks when processing in place
+
+       -i[SUFFIX], --in-place[=SUFFIX]
+
+              edit files in place (makes backup if extension supplied)
+ Manual page sed(1) line 20 (press h for help or q to quit)
+
+	eg
+		sed -e 's/currentname/repalcebyname/' filename
+		sed -e 's/0/chicken/' filename > filename.txt		ls
+		sed -e 's/0/chicken/' filename1.txt | sed -e 's/cken/mp/'			
+			where
+				-e --->expression
+				s--->substitute
+
+			SORT
+
+sort--->Sort the line in the text file
+	syntax:
+		sort filename
+		sort -r filename--->sort in reverse order
+		sort -R FILENAME--->random sort 
+
+			SPLIT
+
+split--->Split the file into pieces
+	syntax:
+		split -l 2 filename--->split by two lines
+		split -b 5 filename--->split by byte
+			
+			TAIL
+
+tail--->output the last part of file
+	syntax:
+		tail /var/log/dmsg--->show last 10 lines
+		tail -n 5 /var/log/dmsg--->show only  last 5 lines
+		tail -f filename--->Watch log files for changes in real time
+
+     			TR
+
+tr--->transulate for upper to lower
+	syntax:
+		tr -t [A-Z] [a-z] 
+		tr -d--->delete 
+		tr -s --->squeeze
+
+			UNEXPAND
+
+unexpand--->convert space to tabs
+	syntax:
+		unexpand -a filename--->create tabs instead of spaces
+
+			UNIQ
+
+uniq--->omit repeated files find duplicate lines
+	syntax:
+		uniq filename
+		uniq -c filename---> occurances of text or FILE
+		uniq -d filename---> only the repeated lines or more than one times
+		uniq -u filename---> other then repeated
+
+			WC
+
+wc--->print lines and words and byte counts for each file
+	syntax:
+		wc filename
+		wc -l filename--->
+		wc *--->all the files
+		wc -w--->only word count

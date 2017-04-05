@@ -1,0 +1,156 @@
+			SEARCH TEXT FILE WITH REGULAR EXPRESSIONS(2)
+
+GREP--->Globally Search a Regular Expression and print
+FGREP--->Force Grep
+EGREP--->Extented Grep
+SED--->Stream Editor
+REGULAR EXPRESSIONS(REGEX)
+
+				GREP
+
+Globally Search a regular expression and print
+Grep with examples
+
+file.txt
+   
+blades    	
+books		
+Books		
+book		
+kitten		
+doogy		
+purple 		
+fa$t
+ship
+plenty
+
+file2.txt
+
+chicken
+fish
+shrimp
+turkey
+fist
+foor
+arm
+lemon
+angry
+
+				^grep
+grep oo file.txt
+books
+Books
+book
+doogy
+some regular expression 
+grep -n oo file.txt--->give the lines
+2:books
+3:Books
+4:book
+6:doogy
+
+grep -i boo file.txt--->ignore case sensitive
+
+books 
+Books
+book
+
+ls -l | grep ile--->result of ls is used as a input by pipe into grep
+
+cat file.txt | grep oo--->Display the content which contain "oo" in file.txt
+
+books
+Books
+book
+doogy
+
+Special Characters in grep
+
+^--->caret symbol begining of line
+$--->Doller End of the line
+.--->Any Character
+
+grep ^ple file.txt--->dislay the begining of line
+
+plenty
+
+grep s$ file.txt--->End of the line
+
+blades
+books
+Books
+
+grep .ple filename--->any character before
+
+purple
+	
+		
+				EGREP--->extended
+
+Extended regular expression
+
+egrep '^(b|d)' file.txt--->display the words begins with either b or d
+blades
+books
+book
+doogy
+
+egrep '^(b|d)oo' file.txt--->display only line which contain [oo] 
+books
+book
+doogy
+
+egrep '^[a-k]' file.txt---> only display the letter begins with a-k
+blades
+books
+book
+kitten
+doogy
+fa$t
+
+egrep '^([a-k]|[A-K])' file.txt--->Display both upper case and lower case
+blades
+books
+Books
+book
+kitten
+doogy
+fa$t
+
+		FGREP--->fast 
+
+Interpret literal strings 
+fgrep s$ file.txt--->Does no find any thing It recognizes regular expressions
+
+fgrep f file.txt--->ignores special characters
+
+fa$t
+
+				SED
+for editing
+sed -e 's/oo/00/' file.txt--->substition instead of [oo]
+blades
+b00ks
+B00ks
+b00k
+kitten
+d00gy
+purple
+fa$t
+ship
+plenty
+
+sed -re 's/^(B|b)/C/' file.txt--->Tooks all the words Started with B or b and substituted with C
+Clades
+Cooks
+Cooks
+Cook
+kitten
+doogy
+purple
+fa$t
+ship
+plenty
+
+regex
+

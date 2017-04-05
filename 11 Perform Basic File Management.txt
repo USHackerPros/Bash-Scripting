@@ -1,0 +1,133 @@
+			BASIC FILE MANAGEMENT(4)
+
+COPY
+MOVE
+delete
+
+		COPY
+
+cp-->copy filename1.txt filename2.txt
+cp -R folder1 folder2--->copy folder recrusively
+	
+		MOVE
+
+mv filename filename2 or folder
+
+			DELETE
+
+rm
+rm -i--->Prompt before every removal
+rm -r---->Recrusively
+rm -rf--->recrusively with force
+rmdir---> remove folder 
+			FILE
+
+file--->type of file
+file filename--->find type of file
+file *
+		WILDCARD
+		
+wildcard(globbing)
+
+	*--->anything or everything
+	?--->any single character
+	!--->not(stuff)
+	[ac]--->a,c--->either a or c
+	[a-c]--->a,b,c
+examples
+	If there are files named bag.txt bat.txt cat.txt sat.txt
+  		then
+	 ls ???.??? will show all the files
+	 ls ??? will show nothing
+	 ls ???.* will show all the files  
+	 ls [ab]* will show either A or B (only the files contain both A and B in beginning)
+	 ls [bc]* will show files containing b and c in beginning
+	 ls [a-m]* will show anything starts from A to M in beginning
+	 ls [!a-m]* opposite of (ls [a-m]*) will show other than A to M in beginning
+			
+			FIND
+			
+	find files based on type size and date
+Example 
+	If there are 4 type of files
+		1.file.txt
+		2.folder
+		3.image.zip
+		4.symlink.lnk->file.txt
+	then
+
+find .--->Find all the files or folders in a  directory
+find . -name "fo*"---> It will file globbe the directory and search file starts with "fo"
+find . -name "[a-z] *.*"---> find files which has A-Z and then has a dot 
+
+find . -size +5M--->Greater than 5MB
+find . -size -2M--->Smaller than 5MB
+find . -size +5M -name "images.*"--->search files based on size larger than 5MB
+find . -size -5M -name "images.*"--->search files based on size smaller than 5MB
+
+find . -type f--->for file type
+find . -type d --->type is a directory
+find - -type l--->find symboliclink
+find . -type f -size +5M--->for file with size greater than 5MB
+find . -type -size +5M--->type and size of the file greater than 5MB
+
+find . -atime +5--->Access time greater than 5days
+find . -atime -5--->Find the access time less than five days
+find . -ctime +5--->Change time
+find . -ctime -5--->change some file
+find . -mtime +5--->Modification time +5=five days
+find . -mtime -5---> find the contents are modified or not
+name
+
+				
+
+			
+		CPIO
+
+		cpio
+ls | cpio -o > ../filename.cpio--->Copy all the files in current dir and gives the output in the parent dir filename.cpio
+
+find . -name "*.txt or zip " | cpio -o > ../filename.cpio
+
+cpio -id < ../ls_archive.cpio--->Extract the cpio file
+
+			DD
+
+Command used to copy backup and write to block devices
+dd if=/dev/sdb of=keydrive.img--->backup the entire drive
+dd of=/dev/sdb if=keydrive.img--->recover file from keydrive.img
+
+
+			GZIP
+Compress
+gzip filename--->g zip the file 
+gunzip filename.gunzip the file
+
+		BZIP2
+	
+IT uses a different algorithm in compressing	
+bzip2 filename
+bunzip2 filename.bz2
+
+			TAR	
+
+		Tar is one of the bet compression tool for archiving tape archive
+
+		tar-compress
+
+tar -cvf archive.tar foldername
+tar -czvf archive.tar.gz foldername
+tar -cjvf archive.tar.bz or archive.tar.bz2 foldername
+
+	where 
+		c--->create 
+		v--->vrebose
+		f--->file
+		z--->compress for gz
+				
+
+		tar--->decompress
+tar -xvf archive.tar
+tar -xzvf archive.tar.gz
+tar -xjvf archive.tar.bz2
+

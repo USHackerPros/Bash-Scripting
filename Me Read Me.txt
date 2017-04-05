@@ -1,0 +1,3 @@
+For Opening these files in aligned manner use Notepad++ for Windows from--->http://notepad-plus-plus.org/download/v6.6.8.html
+	gedit which is an inbuilt edition for Ubuntu
+				

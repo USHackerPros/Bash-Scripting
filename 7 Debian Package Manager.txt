@@ -1,0 +1,81 @@
+			DEBIAN PACKAGE MANAGEMENT(3)
+DPKG
+DPKG-RECONFIGURE
+APT
+apt-get
+apt-cache
+CONFIGURATION
+APTITUDE		
+
+
+			DPKG--->Application used for installing debian packages
+
+for already installed package view
+dpkg -l List--->list all packages or 1 specified
+	eg
+		dpkg -l firefox
+Desired=Unknown/Install/Remove/Purge/Hold
+| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+||/ Name           Version      Architecture Description
++++-==============-============-============-=================================
+ii  firefox        26.0+build2- amd64        Safe and easy web browser from Mo
+
+			
+dpkg -p Print avail--->print available information for already installed packages
+	eg  
+		dpkg -p firefox
+
+dpkg -i --install---> install packages but it will not check for dependencies
+	eg 
+		dpkg -i webmin_1.660_all.deb
+
+dpkg -r --remove--->only remove program just put the file name
+	eg
+		dpkg -r webmin
+
+dpkg -L --listfiles--->show list of files installed
+
+dpkg -P --purge--->remove program aswell as config files
+dpkg -p --print-avail--->give details
+dpkg -S --search--->display package supplying file
+	eg
+		dpkg -S /bin/ls
+
+
+		dpkg-reconfigure
+	very handy
+	want to know package name
+example 
+dpkg-reconfigure postfix
+
+		apt-get commands
+
+apt-get dist-upgrade--->upgrade version
+apt-get upgrade --->normal system upgrade
+apt-get install--->install package
+apt-get remove--->remove package
+apt-get update--->update from repository
+apt-get autoremove--->keep system clean not hurt any thing
+sudo add-apt-repository--->Add repository
+
+ cat /etc/apt/sources.list--->Edit Repository file in ubuntu
+
+ 		apt-cache 
+
+apt-cache search filename--->search for keyword
+apt-cache show filename--->show information on packages
+apt-cache depends filename--->programs it needed
+apt-cache rdepends filename--->what programs depends on it
+
+		configuration 
+		
+		APTITUDE--->all like apt-get but little bit different
+
+aptitude install filename
+aptitude search filename--->search 
+
+
+		/etc/apt/source.list
+consist of source file, and binary packages, web address, dist name, actual repository, updates 
+

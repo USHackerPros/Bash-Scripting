@@ -1,0 +1,64 @@
+			FIND SYSTEM FILES AND PLACE FILES IN CORRECT LOCATION
+
+FHS(FILE HIERARCHY STANDARDS)
+FIND FILES AND COMMANDS
+FIND,LOCATE,UPDATEDB
+WHEREIS,WHICH,TYPE
+/ETC/UPDATEDB.CONF
+
+			FHS(FILE HIERARCHY STANDARDS)
+
+/--->root top
+/bin--->Command binaries are stored
+/boot--->It is aseperate partition boot loader
+/dev--->devices are stored it is virtual eg (hard drive and block devices)
+/etc--->Configuration Files are stored
+/home--->User home Directory which can be stored in seperate as well
+/lib--->library files for executables
+/proc--->Virtual file System
+/root--->root user home directory
+/sbin--->system binaries
+/tmp--->temporary file storage
+/usr--->user binaries it is often read only
+/var--->variable files log files mail
+/media--->mount place for removable media
+/mnt--->legacy location of removable media
+
+			FIND
+
+Find SEarch in REAL TIME Find is much slower but more accurate, it searches in real time through the hierarchy. not very user friendly while searching for wildcard
+
+find / -name filname--->
+find / -user filname--->Search file Own by the user
+
+			LOCATE
+
+Much more good and faster than find 
+
+locate filename
+
+			UPDATEDB.CONF
+
+nano /etc/updatedb.conf--->this tells as how locate database is going to work tells
+sudo updatedb---> it will update the database
+
+			WHICH
+Show where the actual command is
+which ls--->
+
+			TYPE
+
+It tells about aliases
+
+type ls
+typr -a ls--->all about ls
+
+			WHEREIS
+
+whereis ls--->to know more about command and the manual page
+
+
+
+
+
+

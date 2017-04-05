@@ -1,0 +1,36 @@
+				MANAGING DISK QUOTAS
+
+	SET UP QUOTAS ON DISK
+	EDIT SETTINGS
+	CHECK QUOTAS
+	GENERATE REPORTS
+	HARD LIMIT SOFT LIMIT
+
+				SET UP QUOTAS ON DISK
+
+sudo vi /etc/fstab--->to add adisk premanently
+/dev/sdb1 /mnt/pendrive    ext3    defaults,usrquota,grpquota 0 0
+quotaoff /mnt/pendrive---->create quota
+
+				EDIT SETTINGS
+
+edquota -u noname--->edit userquota
+
+				CHECK QUOTAS
+
+quotacheck -cug /mnt/pendrive
+
+				GENERATE REPORT
+	
+repquota /mnt/pendrive--->report for quota
+			
+				HARD LIMIT AND SOFT LIMIT
+
+Filesystem    blocks  soft hard  inode    soft   hard	
+/dev/sdb1       4      10   100   4        0      0
+
+soft limit--->saves allowed to go the soft limit by a grace period not immediately ie. default for first seven(7 days after that it will be a problem
+
+hard limit--->saves not more than the required size ie. 110 means not more than 110
+
+quotaon /mnt/pendrive--->on quota

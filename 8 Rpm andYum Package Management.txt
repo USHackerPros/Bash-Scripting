@@ -1,0 +1,59 @@
+		RPM and YUM packages
+RPM
+RPMZCPIO
+ALIEN
+YUM
+/eyt/yum.conf
+/etc/yum.repos.d/
+yumdownloader
+			YUM
+		
+yum install filename
+yum remove filename
+yum is same like aptitude
+yum search
+yum show
+yum dist-upgrade
+yum install openssh-clients
+yum search opennyssh-clients
+yum upgrade
+yum repolist all--->see all repository list
+/etc/yum/repos.d--->repository list
+/etc/yum/conf
+/var/log/yum.log
+
+		YUMDOWNLOADER
+
+It go to repository and download the rpm file
+yumdownloader filename--->
+yumdownloader --resolve openssh-client
+
+		rpm
+
+Dose two things it installs and removes
+rpm -i--->Installing individul files 
+rpm -r--->remove
+rpm -e filename--->erase file
+rpm -i --nodeps openssh--->install a package without dependencies
+rpm -K openssh-clients--->check signature is vali
+rpm -iv *.rpm--->install and verbose
+rpm -Vv filename--->Verify and verbose filename
+
+	verify and install packages
+
+/etc/ssh/ssh_config
+rpm -V erify and verbose
+rpm -Vv--->V
+		QUERY
+
+rpm -qi filename
+rpm -qd filename--->query and documentation
+rpm -qa--->all version
+		
+		RPM2CPIO
+
+copyio
+rpm2cpio filename.rpm > stuff.cpio redirect to stuff.cpio
+cpio -ivd <stuff.cpio create the files
+less
+alien

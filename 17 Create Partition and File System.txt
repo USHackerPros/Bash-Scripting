@@ -1,0 +1,35 @@
+				CREATE PARTITIONS AND FILE SYSTEMS(2)
+
+PARTITION
+CREATE FILESYSTEM
+MAKE SWAP SPACE
+
+		PARTITION
+
+fdisk -l--->view partition
+fdisk /dev/sdb1--->edit partition
+m--->help
+p--->print
+t--->change partition
+n--->add a new partition
+L--->list partition code
+w--->write table to disk and exit
+LBA--->Large Block Access
+
+		MAKE SWAP SPACE
+
+mkswap /dev/sdb2--->create swap
+swapon /dev/sdb2--->to on the swap space
+swapon -s--->view swapon is used or not
+			
+		CREATE FILESYSTEM
+
+mkswap /dev/sdd1p2
+mkfs -t ext2 /dev/sdb1--->Create file system
+mkfs -t ext3 /dev/sdb1--->Journaling file system Create file system
+mkfs.xfs /dev/sdb1--->xfs file system
+mkfs.xfs -f /dev/sdb1--->xfs file system to create fs by force
+mkfs-t reiserfs /dev/sdb1--->reiserfs file system
+mkfs -t vfat /dev/sdb1--->vfat or ms dos file system
+			
+				
